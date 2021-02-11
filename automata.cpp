@@ -1,7 +1,7 @@
 // CPP program for Finite Automata Pattern searching  
 // Algorithm  
 #include <iostream> 
-
+#include<string>
 using namespace std; 
 #define NO_OF_CHARS 256  
 
@@ -125,12 +125,17 @@ void search(string pat, string txt)
 int main()  
 {  
 
-    string txt = "AABAACAADAABAAABAA";  
+    int t;
+    cin>>t;
+    while(t--)
+    {
+    string txt;  
 
-    string pat = "AABA";  
+    string pat;  
+    cin>>txt>>pat;
 
     search(pat, txt);  
-
+    }
     return 0;  
 }  
 
