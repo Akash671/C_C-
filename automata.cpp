@@ -1,5 +1,5 @@
 // CPP program for Finite Automata Pattern searching  
-// Algorithm  
+// Algorithm  time complexity is T(n)=O(n)
 #include <iostream> 
 #include<string>
 using namespace std; 
