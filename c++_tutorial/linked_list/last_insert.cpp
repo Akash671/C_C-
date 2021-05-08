@@ -1,5 +1,3 @@
-/* author : @akashsaini */
-
 #include<iostream>
 using namespace std;
 
@@ -11,58 +9,56 @@ struct node
 
 struct node *head=NULL;
 
-void last_insert()
+void insert_node()
 {
-    struct node *ptr,*temp;  
-    int item;     
-    ptr = (struct node*)malloc(sizeof(struct node*));      
-    if(ptr == NULL)  
-    {  
-        printf("\nOVERFLOW");     
-    }  
-    else  
-    {  
-        printf("\nEnter value?\n");  
-        scanf("%d",&item);  
-        ptr->data = item;  
-        if(head == NULL)  
-        {  
-            ptr -> next = NULL;  
-            head = ptr;  
-            printf("\nNode inserted");  
-        }  
-        else  
-        {  
-            temp = head;  
-            while (temp -> next != NULL)  
-            {  
-                temp = temp -> next;  
-            }  
-            temp->next = ptr;  
-            ptr->next = NULL;  
-            printf("\nNode inserted");  
-          
-        }  
-    }  	
+    struct node *ptr,*temp;
+    ptr=(struct node*)malloc(sizeof(struct node*));
+    if(ptr==NULL)
+    {
+    	cout<<"Empty";
+    }
+    else
+    {
+    	cout<<"Enter your data  : ";
+    	int item;
+    	cin>>item;
+    	ptr->data=item;
+    	if(head==NULL)
+    	{
+    		ptr->next=NULL;
+    		head=ptr;
+    	}
+    	else
+    	{
+    	//	struct node *temp;
+    		temp=head;
+    		while(temp->next!=NULL)
+    		{
+    			temp=temp->next;
+    		}
+    		temp->next=ptr;
+    		ptr->next=NULL;
+    	//	head=ptr;
+    	}
+    }
 }
 
 void display()
 {
-    struct node *ptr;  
-    ptr = head;   
-    if(ptr == NULL)  
-    {  
-        printf("Nothing to print");  
-    }  
-    else  
-    {  
-        printf("\nprinting values . . . . .\n");   
-        while (ptr!=NULL)  
-        {  
-            printf("\n%d",ptr->data);  
-            ptr = ptr -> next;  
-        }  
-     }
+	struct node *ptr=head;
+	if(ptr==NULL)
+	{
+		cout<<"\nEmpty";
+	}
+	else
+	{
+	   //cout<<"\n";
+		while(ptr!=NULL)
+		{
+			cout<<ptr->data<<" ";
+			ptr=ptr->next;
+		}
+	}
 }
 
 int main()
@@ -71,8 +67,10 @@ int main()
 	cin>>t;
 	while(t--)
 	{
-		last_insert();
-		cout<<"\n";
+		insert_node();
+		//cout<<"\n";
 		display();
+		cout<<"\n";
 	}
+	return 0;
 }
